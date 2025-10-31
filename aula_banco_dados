@@ -1,0 +1,28 @@
+create table Departamento (
+	cod_departamento serial primary key ,
+	nome varchar (50) not null
+);
+
+create table Professor(
+	cod_professor serial primary key,
+	nome varchar (50) not null,
+	cod_departamento integer not null,
+	foreign key (cod_departamento) references Departamento (cod_departamento)
+	on delete cascade
+	on update cascade
+);
+
+
+
+
+create table Diciplina (
+	cod_diciplina serial primary key,
+	nome varchar (50),
+	ementa int not null,
+	num_Credito int not null,
+	cod_departamento integer not null,
+	cod_professor integer not null,
+	foreign key (cod_departamento) references Departamento (cod_departamento),
+	foreign key (cod_professor) references  Professor (cod_professor)
+	);
+-- select * from Departamento
