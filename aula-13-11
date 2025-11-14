@@ -137,3 +137,6 @@ order by codigo_pro;
 
 select * from disciplina
 join professor on (codigo_pro = professor.codigo)
+
+select p.nome, d.nome from professor p
+join departamento d on (p.codigo_dep = d.codigo);
